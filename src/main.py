@@ -19,5 +19,10 @@ def judge_public():
     return render_template("index.html")
 
 
+@app.route("/play_friend", methods=['POST', 'GET'])
+def play_friends_page():
+    return render_template("play_friend_main.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
