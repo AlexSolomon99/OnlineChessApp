@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    ChessAI - Play a Friend
+{% endblock %}
+
+{% block content %}
+<h3 style="margin:auto; width:100%; text-align:center">ChessAI - Lobby</h3>
+  <br>
+  <br>
+
+          <p style="width:50%; margin:auto; text-align: center">
+              Game Code: <b> {{current_code}} </b>
+          </p>
+  <br>
+
+          <p style="width:50%; margin:auto; text-align: center">
+              List of players in the current game:
+          </p>
+    <br>
+    {% for player in list_of_players %}
+      <p style="margin:auto; width:50%; text-align: center" >
+          {{ player.user_acronym }} - {{player.user_pieces_color}}
+      </p>
+    {% endfor %}
+
+<br>
+<form action="lobby" method="post">
+        <p style="margin:auto; width:50%">
+            <button type="submit" class="btn btn-primary" role="button" style="color:white; width:100%">Start Game</button>
+        </p>
+</form>
+<br>
+
+        <p style="margin:auto; width:50%">
+          <a href="/" class="btn btn-primary" role="button" style="color:white; width:100%">Home</a>
+        </p>
+{% endblock %}
+
+

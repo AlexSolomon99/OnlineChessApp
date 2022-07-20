@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    ChessAI - Play a Friend
+{% endblock %}
+
+{% block content %}
+<h3 style="margin:auto; width:100%; text-align:center">ChessAI - Play a Friend</h3>
+
+<br>
+<br>
+    <form action="join_w_code" method="post">
+      <label for="g_code">Insert Game Code:</label>
+      <input type="text" id="g_code" name="game_code"><br><br>
+
+      <br>
+      <p style="margin:auto; width:50%">
+        <button class="btn btn-primary" role="button" type="submit" style="color:white; width:100%">Join Game</button>
+    </p>
+    </form>
+
+    <br>
+    <p style="margin:auto; width:50%">
+      <a href="/" class="btn btn-primary" role="button" style="color:white; width:100%">Home</a>
+    </p>
+{% endblock %}

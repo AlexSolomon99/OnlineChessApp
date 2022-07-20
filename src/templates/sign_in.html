@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    ChessAI - Play a Friend
+{% endblock %}
+
+{% block content %}
+
+<h3 style="margin:auto; width:100%; text-align:center">ChessAI - Sign Up</h3>
+  <br>
+  <br>
+
+<form action="sign_in" method="post">
+  <div class="form-outline mb-4" style="width: 60%; margin: auto">
+    <input type="text" id="username" name="username" class="form-control" required/>
+    <label class="form-label" for="username">Username</label>
+  </div>
+
+  <div class="form-outline mb-4" style="width: 60%; margin: auto">
+    <input type="password" id="password" name="password" class="form-control" required/>
+    <label class="form-label" for="password">Password</label>
+  </div>
+
+  <!-- Submit button -->
+  <button class="btn btn-primary btn-block mb-4" type="submit" style="width: 60%; margin: auto">Sign Up</button>
+
+  <div class="text-center">
+    <p>Already a member? <a href="log_in">Log In</a></p>
+  </div>
+</form>
+
+{% endblock %}
