@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    ChessAI - Play with Friend
+{% endblock %}
+
+{% block content %}
+<h3 style="margin:auto; width:100%; text-align:center">ChessAI - Play a Friend</h3>
+  <br>
+  <br>
+
+          <p style="width:50%; margin:auto; text-align: center">
+              Your code: <b> {{current_code}} </b>
+          </p>
+  <br>
+      <p style="margin:auto; width:50%">
+        <!-- The button used to copy the text -->
+        <button onclick='{{ func_dict["copy_func"](current_code) }}' class="btn btn-primary" style="color:white; width:100%">Copy Code</button>
+      </p>
+  <br>
+      <p style="margin:auto; width:50%">
+          <a href="lobby" class="btn btn-primary" role="button" style="color:white; width:100%">Join the Lobby</a>
+      </p>
+    <br>
+        <p style="margin:auto; width:50%">
+          <a href="/" class="btn btn-primary" role="button" style="color:white; width:100%">Home</a>
+        </p>
+{% endblock %}
+
+
