@@ -61,7 +61,7 @@ class UserAccountsTable(database_for_chess.Model):
         self.user_acronym = user_acronym
         self.password = password
 
-
+#CPT : am luat
 @app.route("/", methods=['POST', 'GET'])
 def main_page():
     """
@@ -78,7 +78,7 @@ def main_page():
         return redirect(url_for("login_page"))
     return render_template("index.html")
 
-
+#CPT : am luat
 @app.route("/play_friend", methods=['POST', 'GET'])
 def play_friends_page():
     """
@@ -111,7 +111,7 @@ def play_friends_page():
     session["game_code"] = current_code
     return render_template("play_friend_main.html", current_code=current_code, func_dict=func_dict)
 
-
+#CPT : am luat
 @app.route("/lobby", methods=['POST', 'GET'])
 def lobby():
     """
@@ -156,7 +156,7 @@ def lobby():
     return render_template("lobby.html", current_code=current_code,
                            list_of_players=list_of_players_on_current_game)
 
-
+#CPT : am luat
 @app.route("/create_put_code", methods=['POST', 'GET'])
 def create_or_put_code():
     """
@@ -173,7 +173,7 @@ def create_or_put_code():
 
     return render_template("create_or_put_code.html")
 
-
+#CPT : am luat
 @app.route("/log_in", methods=['POST', 'GET'])
 def login_page():
     """
@@ -184,7 +184,7 @@ def login_page():
 
     # whenever this page is visited, any user is logged out
     session["logged_in"] = False
-    del session["user_acronym"]
+    #del session["user_acronym"]
 
     # the text in the user acronym and password fields in the form are being saved and checked against existing accounts
     if request.method == "POST":
@@ -214,7 +214,7 @@ def login_page():
 
     return render_template("log_in.html")
 
-
+#CPT : am luat
 @app.route("/sign_in", methods=['POST', 'GET'])
 def sign_in_page():
     """
@@ -225,7 +225,7 @@ def sign_in_page():
 
     # whenever this page is visited, any user is logged out
     session["logged_in"] = False
-    del session["user_acronym"]
+    # del session["user_acronym"]
 
     # if the user acronym does not match an existing account, the new user acronym and password are saved and logged in
     # otherwise, a flagging message is displayed
@@ -251,7 +251,7 @@ def sign_in_page():
 
     return render_template("sign_in.html")
 
-
+#CPT :  am luat
 @app.route("/join_w_code", methods=['POST', 'GET'])
 def join_with_code():
     """
@@ -303,7 +303,7 @@ def join_with_code():
 
     return render_template("join_w_code.html")
 
-
+#CPT : am luat
 def copy_text_to_clipboard(text_to_copy: str):
     """
     Function to copy text to clipboard, used in the page where the game code is generated.
@@ -313,7 +313,7 @@ def copy_text_to_clipboard(text_to_copy: str):
     """
     pyperclip.copy(text_to_copy)
 
-
+#CPT : am luat
 def generate_random_code(length=8):
     """
     This function is used to generate a random code of a given length, which is used as game code.
@@ -325,7 +325,7 @@ def generate_random_code(length=8):
     result_str = ''.join(random.choice(string.ascii_letters) for i in range(length))
     return result_str
 
-
+#CPT :  am luat
 @app.route("/game_table/<player_1>/<player_2>", methods=['POST', 'GET'])
 def game_table_page(player_1, player_2):
 
