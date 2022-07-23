@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, flash, url_for, session
 from . import database_for_chess
-from website.models import PlayersTable, UserAccountsTable
+from models import PlayersTable, UserAccountsTable
 from . import database_for_chess
 
 auth = Blueprint('auth', __name__)
@@ -80,7 +80,7 @@ def sign_in_page():
             flash("The username seems to already exist. Please try another one.")
             return redirect(url_for("auth.sign_in_page"))
 
-    return render_template("auth.sign_in.html")
+    return render_template("sign_in.html")
 
 
 

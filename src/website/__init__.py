@@ -23,6 +23,7 @@ def create_app():
 
     return app
 
+
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
         database_for_chess.create_all(app=app)
